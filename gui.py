@@ -1,3 +1,5 @@
+# ../gui.py
+
 import tkinter as tk
 import numpy as np
 import pandas as pd
@@ -412,7 +414,11 @@ class DataScienceGUI:
             best_seed_value = None
 
             for _ in range(NUM_EXECUTIONS):
+                # Change here for Random or Fixed Seed (for reproducibility)
                 current_seed = np.random.randint(0, 2147483647)
+                # current_seed = (
+                #     1424222372  # Change here to a fixed seed for reproducibility
+                # )
                 X_train, X_test, y_train, y_test = self.data_model.split_data(
                     seed=current_seed
                 )
